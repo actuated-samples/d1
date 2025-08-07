@@ -1,0 +1,19 @@
+name: connect
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+
+jobs:
+  connect:
+    name: connect
+    runs-on: [ubuntu-24.04-arm]
+    steps:      
+      - uses: self-actuated/connect-ssh@master
+        with:
+          block: true
