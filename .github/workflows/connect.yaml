@@ -13,7 +13,12 @@ jobs:
   connect:
     name: connect
     runs-on: [ubuntu-24.04-arm]
-    steps:      
+    steps:
+      - name: info
+        run: |
+          whoami
+          cat /proc/cpuinfo
+          free -h
       - uses: self-actuated/connect-ssh@master
         with:
           block: true
